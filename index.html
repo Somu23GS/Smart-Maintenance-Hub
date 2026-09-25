@@ -2952,7 +2952,7 @@ ROUTES.admin={title:'Admin Panel',render(){
   renderLayoutTab();
   const s=$('#sysInfo');const db=STATE.db;
   const gc=isGASConfigured();
-  s.innerHTML=`<div style="display:grid;gap:7px">${[['Mode',gc?'Google Apps Script':'Local Demo'],['Backend',STATE.connected||!gc?'Connected ✓':'Offline'],['Users',db.users.length],['Breakdown records',db.breakdowns.length],['Total downtime',sumMin(db.breakdowns)+' min'],['Lines / Machines',CONFIG.LINES.length+' / '+Object.values(MACHINES).reduce((s,a)=>s+a.length,0)],['App version','SMH V10.1 — Master'],['Support','somu.ss74@gmail.com'],['Logged in','@'+STATE.user.username]].map(x=>`<div style="display:flex;gap:10px"><span class="fnt" style="width:140px">${x[0]}</span><b style="color:var(--text)">${x[1]}</b></div>`).join('')}</div>`;}};
+  s.innerHTML=`<div style="display:grid;gap:7px">${[['Mode',gc?'Google Apps Script':'Local Demo'],['Backend',STATE.connected||!gc?'Connected ✓':'Offline'],['Users',db.users.length],['Breakdown records',db.breakdowns.length],['Total downtime',sumMin(db.breakdowns)+' min'],['Lines / Machines',CONFIG.LINES.length+' / '+Object.values(MACHINES).reduce((s,a)=>s+a.length,0)],['App version','SMH V10.2 — Master'],['Support','somu.ss74@gmail.com'],['Logged in','@'+STATE.user.username]].map(x=>`<div style="display:flex;gap:10px"><span class="fnt" style="width:140px">${x[0]}</span><b style="color:var(--text)">${x[1]}</b></div>`).join('')}</div>`;}};
 function paintConnPill(){const p=$('#connPill');if(!p)return;const local=!isGASConfigured();
   p.className='pill '+(local?'warn':STATE.connected?'ok':'bad');
   p.textContent=local?'Local Demo Mode':STATE.connected?'Connected to Google':'Connection Failed';}
